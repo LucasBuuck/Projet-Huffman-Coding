@@ -1,3 +1,4 @@
+package huffman;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -51,9 +52,8 @@ public class Main {
 	      }
 	    while ((line = reader.readLine()) != null)
 		for(int i = 0; i < line.length(); i++) {
-			if(l.head == null)l.head = new MyNode(0,line.charAt(i),null);
+			if(l.head == null)l.head = new MyNodeL(0,line.charAt(i),null);
 			l.head.checkExist(line.charAt(i));
-			//System.out.print((line.charAt(i)));
 		}
 		
 	}
@@ -67,6 +67,10 @@ public class Main {
 		occur(list,"src/text.txt");
 		
 		list.printList();
+		System.out.println(list.getSizeList());
+		
+		MyTreeHuffman a = new MyTreeHuffman(list);
+		a.printTree();
 	}
 
 }

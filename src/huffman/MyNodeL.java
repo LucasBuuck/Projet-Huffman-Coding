@@ -1,10 +1,11 @@
+package huffman;
 
-public class MyNode{
+public class MyNodeL{
 		int occur;
 		char letter;
-		MyNode next;
+		MyNodeL next;
 		
-		public MyNode(int occur, char letter, MyNode next) {
+		public MyNodeL(int occur, char letter, MyNodeL next) {
 			this.occur = occur;
 			this.letter = letter;
 			this.next = next;
@@ -18,9 +19,10 @@ public class MyNode{
 			if(next != null)
 				this.next.checkExist(c);
 			else 
-				this.next = new MyNode(1, c, null);
+				this.next = new MyNodeL(1, c, null);
 		}
 		public void printNode() {
 			System.out.println("Letter : " + letter + " Occur : " + occur);
 		}
+
 }
