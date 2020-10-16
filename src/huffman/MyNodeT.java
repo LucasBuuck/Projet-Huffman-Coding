@@ -1,5 +1,8 @@
 package huffman;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class MyNodeT {
 	char letter;
 	int weight;
@@ -21,20 +24,15 @@ public class MyNodeT {
 		this.right = right;
 	}
 
-	public void printNode() {
-		if(this.letter == '0')System.out.print("NODE Weight " + weight);
-		else {
-			System.out.print("Letter : " + this.letter + " Weight : " + weight);
-		}
+	public void printDico(FileWriter f,String s) throws IOException {
+		if(this.letter != '0')  f.write(letter +":" + s +'\n');
+
 		if (left != null) {
-			System.out.print("(");
-			left.printNode();
-			System.out.println(")");
+			 left.printDico(f,s+"0");
 		}
 		if (right != null) {
-			System.out.print("[");
-			right.printNode();
-			System.out.println("]");
+			 right.printDico(f,s+"1");
 		}
+		
 	}
 }

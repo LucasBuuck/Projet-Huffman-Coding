@@ -1,5 +1,7 @@
 package huffman;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MyTreeHuffman {
@@ -35,7 +37,9 @@ public class MyTreeHuffman {
 		return tinyIndex;
 	}
 	
-	public void printTree() {
-		root.printNode();
+	public void createDictionnary() throws IOException {
+		FileWriter myWriter = new FileWriter("src/dico.txt");
+		root.printDico(myWriter, "");
+	    myWriter.close();
 	}
 }
