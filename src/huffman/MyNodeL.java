@@ -25,7 +25,4 @@ public class MyNodeL{
 			System.out.println("Letter : " + letter + " Occur : " + occur);
 		}
 		
-		public void printPath() {
-			if(letter != '0')System.out.println("");
-		}
 }

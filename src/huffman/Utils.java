@@ -50,8 +50,8 @@ public class Utils {
 	      }
 	    while ((line = reader.readLine()) != null)
 		for(int i = 0; i < line.length(); i++) {
-			if(l.head == null)l.head = new MyNodeL(0,line.charAt(i),null);
-			l.head.checkExist(line.charAt(i));
+			if(l.head == null)l.head = new MyNodeL(1,line.charAt(i),null);
+			else l.head.checkExist(line.charAt(i));
 		}
 		
 	}
